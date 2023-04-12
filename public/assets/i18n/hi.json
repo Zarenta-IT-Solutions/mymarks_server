@@ -1,0 +1,37 @@
+{
+    "sidebar.dashboard": "नियंत्रण-पट्ट",
+    "sidebar.timetable": "समय सारणी",
+    "sidebar.user": "उपयोगकर्ताओं",
+    "sidebar.student": "छात्र",
+
+    "dashboard.performance": "प्रदर्शन ",
+   
+    "timetable.timetable" : "समय सारणी",
+  "timetable.name": "नाम",
+  "timetable.firstsem":" ",
+  "timetable.timetablecreate": "TimeTable creat",
+  "timetable.class" : "Class",
+
+  "timetable.ttype":" Type(ClassorExam)",
+  "createuser.editprofile": " प्रोफ़ाइल संपादित करें",
+  "createuser.selectuser" : "उपयोगकर्ता का चयन करें",
+  "createuser.accountan" : "Accountan",
+  "createuser.parent" : "Parent",
+  "createuser.teacher" : "Teacher",
+  "createuser.admin" : "Admin",
+  "createuser.suparadmin" : "SuparAdmin" ,
+  "createuser.bloodgroup" : "रक्त समूह",
+  "createuser.fullname" :  "पूरा नाम",
+    "createuser.address" : "पता",
+    "createuser.emailaddress" : "ईमेल पता",
+    "createuser.username" : "उपयोगकर्ता नाम" ,
+    "createuser.phone" : "फ़ोन" ,
+    "createuser.telephone" : "टेलीफोन" ,
+    "createuser.dateofemployment" : "रोजगार की तारीख ",
+    "createuser.password" : "पासवर्ड" ,
+    "createuser.gender" : "लिंग" ,
+    "createuser.nationality" : "राष्ट्रीयता ",
+    "createuser.state" : "राज्य" ,
+    "createuser.lga " : "LGA" ,
+    "student.studentlist" : "छात्र सूची"
+}

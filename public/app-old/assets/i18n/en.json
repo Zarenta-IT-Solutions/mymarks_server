@@ -1,0 +1,237 @@
+{
+    "sidebar" : {
+        "dashboard": "Dashboard",
+        "timetable": "TimeTable",
+        "user": "Users",
+        "student": "Student",
+        "class" : "Class",
+        "classtypes" : "Class Type",
+        "section" : "Section",
+        "session" : "Session",
+        "exam" : "Exam",
+        "subject" : "Subject",
+        "mark" : "Marks"
+    },
+    
+    "dashboard": {
+        "performance": "Performance"
+    },
+
+    "timetable" : {
+        "timetable" : "TimwTable",
+        "name": "Name",
+        "firstsem":" Firstsem",
+        "timetablecreate": "TimeTable creat",
+        "ttype": "Type(ClassorExam)",
+        "class" : "Class"
+    },
+    "createuser": {
+        "title": "Create New User",
+        "selectuser" : "Select User",
+        "accountan" : "Accountan",
+        "parent" : "Parent",
+        "teacher" : "Teacher",
+        "admin" : "Admin",
+        "suparadmin" : "SuparAdmin",
+        "bloodgroup" : "Blood Group",
+        "fullname" :  "Full Name",
+        "address" : "Address",
+        "emailaddress" : "Email Address",
+        "username" : "User Name" ,
+        "phone" : "Phone" ,
+        "telephone" : "Telephone" ,
+        "dateofbirth" : "Date of Birth",
+        "about" : "About Us",
+        "password" : "Password" ,
+        "gender" : "Gender" ,
+        "nationality" : "Nationality ",
+        "state" : "State" ,
+        "lga " : "LGA",
+        "dob" : "DOB",
+        "schoolhome" : " School Home",
+        "sessionyear" : "Session Year",
+        "medium" : "Medium",
+        "cast" : "cast",
+        "bankacnumber" : "Bank Account Number",
+        "bankifsc" : "Bank Ifsc",
+        "bankname" : "Bank Name",
+        "sssm" : "SSSM",
+        "familyid" : "Family Id",
+        "aadharnumber" : "Aadhar Number",
+        "scholar" : "Scholar",
+        "enrollment" : "Enrollment Number",
+        "rollnumber" : "Roll Number",
+        "class" : "Class",
+        "mothername" : "Mothers Name",
+        "fathersname" : "Fathers Name",
+        "studentname" : "Student Name",
+        "createnew.create" : "+ Crearte New Class",
+        "createnew.class" : "Classs Type",
+        "createnew.edit" : "Edit class",
+        "user_list" : "User List",
+        "search_keyword" :"Search Keyword",
+        "name" : "Name",
+        "Email" : "Email",
+        "Mobile" : "Mobile",
+        "Gender" : "Gender",
+        "Date" : "Date",
+        "Options" : "Options",
+        "city" : "City",
+        "file" :  "File ",
+        "avatar" : "avatar",
+        "about_me" :  "About Me",
+        "save" : "Save"
+        
+    },
+
+    "creatstudent":{
+               "PersonalInformation" : "Personal Information",
+                "name" :  "Name",
+                "dateofbirth" : "Date of Birth",
+                "fathersname" :"Fathers Name",
+                "mothername" : "Mothers Name",
+                "aadharnumber" : "Aadhar Number", 
+                "SSSMId": "SSSM Id",
+                "MobileNumber" : "MobileNumber",
+                "Gender" : "Gender",
+                "bloodgroup" : "Blood Group",
+                "nationality" :"Nationality ",
+                "state" :"State",
+                "city" : "City",
+                "cast" : "Cast ",
+                "Familyid" : "Family id",
+                "StudentName" : "Student Name" ,
+                "SelectGender" : "Select Gender",
+                "SelectaGroup" : "Select a Group",
+                "SelectaCountry" : "Select a Country",
+                "SelectaState" : "Select a State",
+                "SelectaCity" : "Select a City",
+                "Save&Next" : "Save & Next",
+                "Avatar" : "user",
+                "File" : "image",
+                "BankInformation" : "Bank Information",
+                "BankName" : "Bank Name",
+                "BankACName" : "Bank AC Name",
+                "BankIFSC" : "Bank IFSC",
+                "Save" : "save",
+               "edit_information" : "Edit Information",
+               "class_information" : "Class Information",
+               "class" :"Class",
+               "class_section" : "Class Section",
+               "rollnumber" :"Roll Number",
+               "enrollment_number" : "Enrollment Number",
+               "scholar_number": "Scholar Number",
+               "medium" : "Medium",
+               "RTE" : "RTE",
+               "RTE_Number" : "RTENumber"
+               
+               
+                
+              
+    },
+
+
+    "student": {
+        "studentlist" : "studentlist",
+        "search_keyword" :"Search Keyword",
+        "name" : "Name",
+        "email" : "Email",
+        "avatar" : "Avatar",
+        "mobile" : "Mobile",
+        "gender" : "Gender",
+        "date" : "Date",
+        "options" : "Options",
+        "father_name":"Father's Name",
+        "date_of_bith":"DOB",
+        "roll_number":"Roll Number"
+    },
+    "subject":{
+        "subject": "Subject",
+        "name": "Name",
+        "shortname": "Short Name",
+        "selectclass": "Select Class",
+        "teacher" : "Teacher"
+    },
+    "exam":{
+        "addexam" : ""
+    },
+
+    "createsubject" : {
+        "subjectlist": "Subject List",
+        "name" : "Name",
+        "code" : "Code",
+        "class" : "Class",
+        "teacher" : "Teacher",
+        "date" : "Date",
+        "options" : "Options",
+        "createnewsection" : "Create New Section ",
+        "subjectname" : "Subject Name",
+        "subjectcode" : "Subject Code",
+        "spdatesection" : "Spdate Section",
+        "search_keyword" : "Search Keyword",
+        "title" :"Title",
+        "select_a_class" : "Select a Class",
+        "select_a_teacher" :"Select a Teacher",
+        "subject_name" : "Subject Name",
+        "subject_code" : "Subject Code",
+        "Save" :"save",
+        "Update" : "Update"
+        
+
+
+    },
+    "creatsection": {
+      "sectionlist": "Section List",
+      "Name": "Name",
+      "Class" : "Class",
+      "teacher" :"Teacher",
+      "options" : "Options",
+      "create_new_section" : "Create New Section",
+      "section_name" : "Section_Name",
+      "update_section" : "Update Section",
+      "Search_keyword" : "Search keyword",
+      "Select_a_Class" : "Select a Class",
+      "select_a_teacher" : "Select a Teacher",
+      "class_name" : "Class Name",
+      "save" : "Save",
+      "Update" : "Update"
+    },
+    "createclass" : 
+    {
+      "classes_list" : "Classes List",
+      "search_keyword" : "Search Keyword",
+      "name" : "Name",
+      "type" : "Type",
+      "date" : "Date",
+      "options" : "Options",
+      "create_new_class" : "Create New Class",
+      "class_type" : "Class Type",
+      "class_name" : "Class Name",
+      "select_a_type" : "Select a Type",
+      "save" : "Save",
+      "update" : "Update",
+      "title" : "Title",
+      "class_code" : "Class Code"
+    },
+
+    "createsession" : 
+    { 
+        "session_list" : "Session List",
+         "search_keyword" :"Search Keyword",
+         "year" : "Year",
+         "year_range" : "Year Range",
+         "Default" : "Default",
+         "date" : "Date",
+         "Options" : "Options",
+         "title" : "Title",
+         "create_new_session" : "Create New Session",
+         "session_year" : "Session Year",
+         "2020_2021" : "2020-2021",
+         "Save" :"save",
+         "update_session" : "Update Session"
+         
+ 
+
+    }
+
+  }

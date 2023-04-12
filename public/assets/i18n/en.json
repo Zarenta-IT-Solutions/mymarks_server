@@ -1,0 +1,38 @@
+{
+    "sidebar.dashboard": "Dashboard",
+    "sidebar.timetable": "TimeTable",
+    "sidebar.user": "Users",
+    "sidebar.student": "Student",
+
+    "dashboard.performance": "Performance",
+
+    "timetable.timetable" : "TimwTable",
+    "timetable.name": "Name",
+    "timetable.firstsem":" Firstsem",
+    "timetable.timetablecreate": "TimeTable creat",
+    "timetable.ttype": "Type(ClassorExam)",
+    "timetable.class" : "Class",
+    "createuser.editprofile": "Edit profile",
+    "createuser.selectuser" : "Select User",
+    "createuser.accountan" : "Accountan",
+    "createuser.parent" : "Parent",
+    "createuser.teacher" : "Teacher",
+    "createuser.admin" : "Admin",
+    "createuser.suparadmin" : "SuparAdmin",
+    "createuser.bloodgroup" : "Blood Group",
+    "createuser.fullname" :  "Full Name",
+    "createuser.address" : "Address",
+    "createuser.emailaddress" : "Email Address",
+    "createuser.username" : "User Name" ,
+    "createuser.phone" : "Phone" ,
+    "createuser.telephone" : "Telephone" ,
+    "createuser.dateofemployment" : "Dateofemployment ",
+    "createuser.password" : "Password" ,
+    "createuser.gender" : "Gender" ,
+    "createuser.nationality" : "Nationality ",
+    "createuser.state" : "State" ,
+    "createuser.lga " : "LGA",
+    "student.studentlist" : "studentlist"
+    
+
+  }

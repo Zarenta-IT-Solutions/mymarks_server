@@ -1,0 +1,234 @@
+{
+    "sidebar":{
+      "dashboard": "नियंत्रण-पट्ट",
+      "timetable": "समय सारणी",
+      "user": "उपयोगकर्ताओं",
+      "student": "छात्र",
+      "class" : " कक्षा",
+      "exam" : "परीक्षा",
+      "subject" : "विषय"
+    },
+    "dashboard":{
+      "performance": "प्रदर्शन "
+    },
+    "timetable":{
+      "timetable" : "समय सारणी",
+      "name": "नाम",
+      "firstsem":" ",
+      "timetablecreate": "TimeTable creat",
+      "class" : "Class",
+      "ttype":" Type(ClassorExam)"
+    },
+
+    "creatstudent":{
+      "PersonalInformation" : "व्यक्तिगत जानकारी",
+      "name" :  "नाम", 
+      "dateofbirth" : "जन्म तिथि",
+      "fathersname" :"पिता का नाम",
+      "mothername" : "माता का नाम",
+      "aadharnumber"  :  "आधार संख्या",
+      "MobileNumber" : "मोबाइल नंबर",
+      "Gender" : "लिंग",
+      "bloodgroup" : "रक्त समूह",
+      "nationality" :"राष्ट्रीयता ",
+      "state" :  "राज्य",
+      "city" : "शहर",
+        "cast" : "कास्ट" ,
+        "Familyid" : "परिवार आई.डी.",
+        "StudentName" : "छात्र का नाम",
+        "SelectGender" : "लिंग चुनें" ,
+        "SelectaGroup" : "एक समूह का चयन करें",
+        "SelectaCountry" : "कोई देश चुनें",
+        "SelectaState" : "एक राज्य का चयन करें" ,
+        "SelectaCity" : " एक शहर का चयन करें",
+        "Save&Next" : "सहेजें और अगला",
+        "Avatar" : "उपयोगकर्ता ",
+        "File" : "की छवि",
+        "BankInformation" : "बैंक जानकारी",
+        "BankName" : "बैंक का नाम",
+        "BankACName" : "बैंक खाता संख्या",
+        "BankIFSC" : "बैंक IFSC ",
+        "Save" : " सहेजें",
+        "edit_information" : "जानकारी संपादित करें",
+        "class_information" : "कक्षा की जानकारी",
+        "class" :"कक्षा",
+        "class_section" : "कक्षा अनुभाग",
+        "rollnumber" :"रोल नंबर",
+        "enrollment_number" : "नामांकन संख्या",
+        "scholar_number": "छात्रवृत्तिधारी संख्या ",
+        "medium" : "मध्यम",
+        "RTE" : "आरटीई",
+        "RTE_Number" : "आरटीई नंबर"
+        
+        
+        
+        
+
+},
+
+
+"createsubject" : {
+  "subjectlist" : "विषय सूची",
+  "name" : "नाम",
+  "code" : "कोड",
+  "class" : "कक्षा",
+  "teacher" : "अध्यापक",
+  "date" : "दिनांक",
+  "options" : "विकल्प",
+  "createnewsection" : "नया अनुभाग बनाएँ",
+  "subjectname" : "विषय नाम",
+  "subjectcode" : "विषय कोड",
+  "spdatesection" : "स्पेटेट सेक्शन",
+  "search_keyword" : "मुख्य शब्द ढूंडो",
+  "title" :"शीर्षक" ,
+  "select_a_class" : "एक वर्ग का चयन करें",
+  "select_a_teacher" :"एक शिक्षक का चयन करें",
+  "subject_name" : "विषय नाम",
+  "subject_code" : "विषय कोड",
+  "Save" :"सहेजें",
+  "Update" : "अपडेट करें"
+
+},
+
+
+
+    "student":{
+      "studentlist" : "छात्र सूची" ,
+      "search_keyword" :"मुख्य शब्द ढूंडो",
+      "name" : "नाम",
+      "email" : "ईमेल",
+      "avatar" : "अवतार",
+      "mobile" : "मोबाइल",
+      "gender" : "लिंग",
+      "date" : "तिथि",
+      "options" : "विकल्प"
+
+    },
+    
+   "createuser":{
+    "title": "नया उपयोगकर्ता बनाएँ",
+    "schoolhome" : " स्कूल घर",
+    "editprofile": " प्रोफ़ाइल संपादित करें",
+    "selectuser" : "उपयोगकर्ता का चयन करें",
+    "accountan" : "Accountan",
+    "parent" : "Parent",
+    "teacher" : "Teacher",
+    "admin" : "Admin",
+    "suparadmin" : "SuparAdmin" ,
+    "bloodgroup" : "रक्त समूह",
+    "fullname" :  "पूरा नाम",
+    "address" : "पता",
+    "emailaddress" : "ईमेल पता",
+    "username" : "उपयोगकर्ता नाम" ,
+    "phone" : "फ़ोन" ,
+    "telephone" : "टेलीफोन" ,
+    "dateofemployment" : "रोजगार की तारीख ",
+    "password" : "पासवर्ड" ,
+    "gender" : "लिंग" ,
+    "nationality" : "राष्ट्रीयता ",
+    "state" : "राज्य" ,
+    "lga " : "LGA" ,
+    "dob" :  "जन्म तिथि",
+    "sessionyear" : "सत्र वर्ष",
+    "medium" : "मध्यम",
+    "cast" : "कास्ट",
+    "bankacnumber" : "बैंक का अकांउट नंबर",
+    "bankifsc" : "बैंक ifsc",
+    "bankname" : "बैंक का नाम",
+    "sssm" : "SSSM",
+    "familyid" : "परिवार आई.डी.",
+    "aadharnumber" : "आधार संख्या",
+    "scholar" : "छात्रवृत्ति",
+    "enrollment" : "नामांकन संख्या",
+    "rollnumber" : "रोल नंबर",
+    "class" : "कक्षा",
+    "mothername" : "माता का नाम",
+    "fathersname" : "पिता का नाम",
+    "studentname" : "छात्र का नाम",
+    "user_list" : "उपयोगकर्ता की सूची",
+    "search_keyword" :"मुख्य शब्द ढूंडो",
+    "name" : "नाम",
+    "Email" : "ईमेल",
+    "Mobile" : "मोबाइल",
+    "Gender" : "लिंग",
+    "Date" : "तारीख",
+    "Options" : "विकल्प",
+    "city" : "शहर",
+    "dateofbirth" : "जन्म की तारीख",
+    "file" :  "फ़ाइल",
+    "avatar" : "अवतार",
+    "about" : "हमारे बारे में",
+    "about_me" :  "मेरे बारे में",
+    "save" : "सहेजें"
+
+  },
+   "createnew":{
+     "create" : "+ Crearte नई कक्षा",
+      "class" : "क्लास का प्रकार",
+      "edit" :  "कक्षा संपादित करें"
+   },
+   "subject":{
+      "subject": "विषय",
+      "name": "नाम",
+      "shortname": "संक्षिप्त नाम",
+      "selectclass": "कक्षा का चयन करें",
+      "teacher" : "अध्यापक"
+   },
+   
+   "creatsection": {
+    "sectionlist": " खंड सूची",
+    "Name": "नाम",
+    "Class" : "कक्षा",
+    "teacher" :"शिक्षक",
+    "options" : "विकल्प",
+    "create_new_section" : "नया अनुभाग बनाएं",
+    "section_name" : "अनुभाग नाम",
+    "update_section" : "अद्यतन अनुभाग",
+    "Search_keyword" : "मुख्य शब्द ढूंडो",
+    "Select_a_Class" : "एक वर्ग का चयन करें",
+    "select_a_teacher" : "एक शिक्षक का चयन करें",
+    "class_name" : "क्लास का नाम",
+    "save" : "सहेजें",
+    "Update" : "अपडेट"
+  },
+  "createclass" : 
+  {
+    "classes_list" : "वर्ग सूची",
+    "search_keyword" : "मुख्य शब्द ढूंडो",
+    "name" : "नाम",
+    "type" : "प्रकार",
+    "date" : "तिथि",
+    "options" : "विकल्प",
+    "create_new_class" :  "नई कक्षा बनाएँ",
+    "class_type" : "क्लास टाइप",
+    "class_name" :  "क्लास का नाम",
+    "select_a_type" : "एक प्रकार का चयन करें",
+    "save" : "सहेजें",
+    "update" : "अपडेट",
+    "title" : "शीर्षक",
+    "class_code" : "कक्षा का कोड"
+    
+
+  },
+  
+  "createsession" : 
+    { 
+        "session_list" : "सत्र सूची",
+        "search_keyword" :"मुख्य शब्द ढूंडो",
+        "year" : "साल",
+        "year_range" : "वर्ष सीमा",
+        "Default" : "चूक",
+        "date" : "तिथि",
+        "Options" : "विकल्प",
+        "title" : "शीर्षक",
+        "create_new_session" : " नया सत्र बनाएँ",
+        "session_year" : "सत्र वर्ष",
+        "2020_2021" : "2020-2021",
+        "Save" :"सहेजें",
+        "update_session" : "Update Session"
+
+
+
+    }
+
+}
