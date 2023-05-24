@@ -37,15 +37,15 @@ class StudentController extends Controller
             ->join('classes','classes.id','student_academic_years.class_id')
             ->leftJoin('sections','sections.id','student_academic_years.section_id')
             ->where('student_academic_years.class_id',\request()->class_id)
-            ->where('academic_id',auth()->user()->current_academic_year_id)->orderBy('roll_number')->get();
+            ->where('academic_id',auth()->user()->current_academic_year_id)->get();
         }
         $class = Classes::findOrFail(\request()->class_id);
         $acedemic = Academic::findOrFail(auth()->user()->current_academic_year_id);
         $students = User::role('student')->select('users.id','users.name','users.father_name','users.mother_name','student_academic_years.class_id','student_academic_years.academic_id','users.mobile','users.avatar','users.gender','users.date_of_birth','enrollment','scholar','student_academic_years.fee','cast','users.created_at','media.name as medium','student_academic_years.roll_number')
             ->join('student_academic_years','student_academic_years.user_id','users.id')
-            ->join('media','media.id','users.medium_id')
+            ->leftJoin('media','media.id','users.medium_id')
             ->where('class_id',\request()->class_id)
-            ->where('academic_id',auth()->user()->current_academic_year_id)->orderBy('roll_number');
+            ->where('academic_id',auth()->user()->current_academic_year_id);
         return Datatables::of($students)
             ->addIndexColumn()
             ->editColumn('date_of_birth',function ($data){
@@ -158,7 +158,7 @@ class StudentController extends Controller
         }
         $mediums = Medium::select('name','id')->get();
         $classes = Classes::select('id','name','fee')->get();
-        
+
         $sections = Section::select('id','name')->where('class_id',$id)->get();
         // if($sections->isEmpty()){ $sections = [array('name'=>'NA','id'=>0)];  }
         return response()->json(['user'=>$user,'mediums'=>$mediums,'countries'=>$countries,'states'=>$states,'cities'=>$cities,'classes'=>$classes,'sections'=>$sections],200);
@@ -227,7 +227,7 @@ class StudentController extends Controller
             $data_two['section_id'] = $request->section_id;
             StudentAcademicYear::firstOrCreate($data_two);
             $count++;
-            
+
         }
         return response()->json("$count record Added Successfully");
     }
@@ -236,8 +236,8 @@ class StudentController extends Controller
     {
         foreach ($request->students as $student){
             StudentAcademicYear::where('user_id',$student['id'])->where('class_id',$request->class_id)->where('academic_id',auth()->user()->current_academic_year_id)->update(['roll_number'=>$student['roll_number']]);
-            $mark = Marks::where('user_id',$student['id'])->where('class_id',$request->class_id)->where('academic_year_id',auth()->user()->current_academic_year_id)->first();
-            if($mark) {
+            $marks = Marks::where('user_id',$student['id'])->where('class_id',$request->class_id)->where('academic_year_id',auth()->user()->current_academic_year_id)->get();
+            foreach($marks as $mark) {
                 $mark->roll_number = $student['roll_number'];
                 $markData = $mark->mark_data;
                 $markData['roll_number'] = $student['roll_number'];
@@ -257,8 +257,9 @@ class StudentController extends Controller
 
         $classes = Classes::select('id','name')->get();
         $academic = Academic::select('id','year','year_range')->get();
-        $students = User::role('student')->select('users.id','users.name','users.father_name','student_academic_years.roll_number','student_academic_years.class_id','student_academic_years.academic_id','users.mobile','users.avatar','users.gender','users.date_of_birth','users.created_at')
+        $students = User::role('student')->select('users.id','users.name','users.father_name','student_academic_years.roll_number','student_academic_years.class_id','student_academic_years.academic_id','users.mobile','users.avatar','users.gender','users.date_of_birth','users.created_at','users.deleted_at')
             ->join('student_academic_years','student_academic_years.user_id','users.id')
+//            ->join('media','media.id','users.medium_id')
             ->where('class_id',\request()->class_id)
             ->where('academic_id',auth()->user()->current_academic_year_id)->get();
         return response()->json(['classes'=>$classes,'academic'=>$academic,'students'=>$students],200);
@@ -301,7 +302,7 @@ class StudentController extends Controller
         if($request->hasFile('image')){
              $data['avatar'] = $request->file('image')->storePublicly('avatars');
         }
-        
+
         $user->update($data);
         if($request->has('class_id'))
         {
@@ -309,7 +310,7 @@ class StudentController extends Controller
             $d = $request->only('roll_number','class_id','section_id','fee');
             $d['section_id'] = $d['section_id']=='null'?null:$d['section_id'];
             $acedemic->update($d);
-           
+
         }
         return response()->json($user,200);
     }
@@ -319,7 +320,7 @@ class StudentController extends Controller
     {
         foreach($request->all() as $student)
         {
-            $user = User::findOrFail($student['id']);    
+            $user = User::findOrFail($student['id']);
             $user->delete();
         }
     }

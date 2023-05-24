@@ -14,11 +14,14 @@ class MarksPerExamSheet implements  WithTitle,FromView
 {
     private $examId;
 
+    private $classId;
+
     private $name;
 
-    public function __construct(int $examId, string $name)
+    public function __construct(int $examId, $classId, string $name)
     {
         $this->examId = $examId;
+        $this->classId = $classId;
         $this->name = $name;
     }
 
@@ -27,8 +30,7 @@ class MarksPerExamSheet implements  WithTitle,FromView
     {
 
         $setting = Setting::where('title','academic_year_id')->firstOrFail();
-
-        $marks =  Marks::query()->where('exam_id',$this->examId)->where('academic_year_id',$setting->val)->pluck('mark_data');
+        $marks =  Marks::query()->where('exam_id',$this->examId)->where('class_id',request()->class_id)->where('academic_year_id',$setting->val)->orderBy('roll_number')->pluck('mark_data');
         return view('admin.school.excel')->with('marks',$marks)->with('keys',array_keys(($marks->first()!=null)?$marks->first():[]));
     }
     /**

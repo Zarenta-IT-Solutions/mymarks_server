@@ -65,7 +65,7 @@ class TenantController extends Controller
         $tenant = Tenant::create(['id' => $request->id]);
         $tenant->domains()->create(['domain' => $request->id.'.'.config('tenancy.central_domain'),'school_name'=>$request->school_name,'contact_number'=>$request->contact_number]);
         $tenant->run(function ($tenant) use ($request) {
-            Artisan::call('db:seed');
+            Artisan::call('db:seed', ['--force' => true ]);
             $user =  User::create(['name' => $request->name, 'email' => $request->email, 'password' => Hash::make($request->password)]);
             $user->assignRole('admin');
             $user->notify(new NewSchool($request));

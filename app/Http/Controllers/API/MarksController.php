@@ -34,7 +34,16 @@ class MarksController extends Controller
      */
     public function checkStudent($exam_id, $classId)
     {
-        $users = User::select('users.id','users.name','student_academic_years.roll_number')
+        $deletedUsers = User::where('student_academic_years.class_id',$classId)
+            ->join('student_academic_years','users.id','student_academic_years.user_id')
+            ->where('student_academic_years.academic_id',auth()->user()->current_academic_year_id)->onlyTrashed()->get();
+
+        if($deletedUsers) {
+            foreach ($deletedUsers as $delUser) {
+                $mark = Marks::where('class_id', $classId)->where('user_id', $delUser->user_id)->where('exam_id', $exam_id)->where('academic_year_id', auth()->user()->current_academic_year_id)->delete();
+            }
+        }
+        $users = User::select('users.id','users.name','student_academic_years.roll_number','users.deleted_at')
             ->join('student_academic_years','users.id','student_academic_years.user_id')
             ->where('student_academic_years.class_id',$classId)
             ->where('academic_id',auth()->user()->current_academic_year_id)->get()->toArray();
@@ -45,7 +54,6 @@ class MarksController extends Controller
                 foreach ($subjects as $subject) {
                     $user[$subject->slug] = 0;
                 }
-
                 Marks::firstOrCreate([
                     'class_id' => $classId,
                     'academic_year_id' => auth()->user()->current_academic_year_id,
@@ -132,8 +140,9 @@ class MarksController extends Controller
 
             $acedmic = StudentAcademicYear::where('user_id',$mark->user_id)->where('academic_id', auth()->user()->current_academic_year_id)->first();
             $data = array_merge($mark->user->toArray(), array('roll_number' => $acedmic->roll_number,'medium'=>ucfirst($mark->user->medium->name),'dobw'=>DOBinWord($mark->user->date_of_birth),'session'=>$acedmic->academic->year_range,'class_name'=>$exam->my_class->name), $mark->calculate_data);
-            if($mark->user->avatar!=null && Storage::get($mark->user->avatar)) {
-                $templateProcessor->setImageValue('avatar', array('src' => $data['avatar'], 'height' => '150', 'width' => '150'));
+//            dd($data);
+            if($data['avatar']!=null) {
+                $templateProcessor->setImageValue('avatar', array('src' => $data['avatar'], 'height' => '250', 'width' => '250'));
             }
             $data['avatar']='';
             $templateProcessor->setValues($data);

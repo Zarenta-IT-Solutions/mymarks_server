@@ -84,7 +84,7 @@ class User extends Authenticatable
             return Storage::url(\request()->session()->get('slug').'/'.$avatar);
         }
         if($avatar){ return Storage::url($avatar); }
-        else { return Storage::url('avatar/user.png'); }
+        else { return 'https://mymarks.s3.ap-south-1.amazonaws.com/avatar/user.png'; }
     }
     public function getDateOfBirthAttribute($date)
     {

@@ -14,7 +14,7 @@ class StudentExport implements WithMultipleSheets
     public function __construct($exams)
     {
         $this->exams = $exams;
-        
+
     }
     /**
      * @return array
@@ -23,7 +23,7 @@ class StudentExport implements WithMultipleSheets
     {
         $sheets = [];
         foreach ($this->exams as $exam) {
-            $sheets[] = new MarksPerExamSheet($exam->id, $exam->name);
+            $sheets[] = new MarksPerExamSheet($exam->id, $exam->class_id, $exam->name);
         }
         $sheets[] = new FormulaSheetImport();
         return $sheets;

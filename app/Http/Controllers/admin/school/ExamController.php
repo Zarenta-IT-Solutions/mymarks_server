@@ -15,7 +15,7 @@ use DocxMerge\DocxMerge;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Revolution\Google\Sheets\Facades\Sheets;
-
+use Maatwebsite\Excel\Facades\Excel;
 
 class ExamController extends Controller
 {
@@ -62,7 +62,7 @@ class ExamController extends Controller
         $dm->merge($files,'result.docx');
         \File::deleteDirectory(public_path($temDirectory));
         return response()->download('result.docx')->deleteFileAfterSend(true);
-        
+
     }
 
 
@@ -103,6 +103,11 @@ class ExamController extends Controller
     {
         $setting = Setting::where('title','academic_year_id')->firstOrFail();
         $exam = Exam::findOrFail(\request()->exam_id);
+//        if(Storage::get($exam->template)){
+//            $data = Excel::open(Storage::url($exam->template))->get();
+//            dd($data);
+//        }
+//        return Storage::url($exam->template);
         $exams = Exam::where('academic_year_id', $setting->val)->select('name', 'id')->where('class_id', \request()->class_id)->get();
         return (new StudentExport($exams))->download($exam->name.'.xlsx');
 
@@ -152,7 +157,7 @@ class ExamController extends Controller
     {
         $setting = Setting::where('title','academic_year_id')->firstOrFail();
         $exam = Exam::findOrFail($id);
-        $marks = Marks::where('academic_year_id',$setting->val)->where('exam_id',$exam->id)->where('class_id',$exam->class_id)->get();
+        $marks = Marks::where('academic_year_id',$setting->val)->where('exam_id',$exam->id)->where('class_id',$exam->class_id)->orderBy('roll_number')->get();
         return view('admin.school.exam.show')->with('exam',$exam)->with('marks',$marks);
     }
 
