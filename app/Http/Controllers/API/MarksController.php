@@ -59,7 +59,7 @@ class MarksController extends Controller
                     'academic_year_id' => auth()->user()->current_academic_year_id,
                     'exam_id' => $exam_id,
                     'user_id' => $user['id'],
-                    'roll_number' => $user['roll_number'],
+                    'roll_number' =>preg_replace("/[^0-9]/", "", $user['roll_number']),
                     'mark_data' => $user
                 ]);
             }

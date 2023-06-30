@@ -56,7 +56,7 @@ class ExamController extends Controller
         $request->validate(['class_id' => 'required','name' => 'required']);
         $data =  $request->only('class_id','name','subject_data');
         $data['academic_year_id'] = auth()->user()->current_academic_year_id;
-        $exam =  Exam::firstOrCreate($data);
+       return Exam::firstOrCreate($data);
     }
 
     /**

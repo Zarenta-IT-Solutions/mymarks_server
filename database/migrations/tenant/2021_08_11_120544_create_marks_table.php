@@ -20,7 +20,7 @@ class CreateMarksTable extends Migration
             $table->unsignedBigInteger('exam_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->float('percent')->nullable();
-            $table->string('roll_number')->nullable();
+            $table->integer('roll_number')->nullable();
             $table->text('description')->nullable();
             $table->longText('mark_data')->nullable();
             $table->longText('calculate_data')->nullable();

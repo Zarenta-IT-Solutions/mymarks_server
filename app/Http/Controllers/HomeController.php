@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Marks;
-use App\Models\Setting;
-use App\Models\StudentAcademicYear;
-use App\Models\User;
-use App\msGraph\Workbook;
+use Microsoft\Graph\Graph;
+use Microsoft\Graph\Model\WorkbookRange;
+use Microsoft\Graph\Model\WorkbookWorksheet;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Mail;
@@ -13,7 +11,6 @@ use App\Models\Tenant;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Artisan;
-use Microsoft\Graph\Graph;
 use Microsoft\Graph\Connect\Constants;
 
 class HomeController extends Controller
@@ -51,7 +48,7 @@ class HomeController extends Controller
                 $accessToken = $provider->getAccessToken('authorization_code', ['code'=> \request()->code]);
                 $token = $accessToken->getToken();
                 $expire_at = Carbon::createFromTimestamp($accessToken->getExpires());
-                $data = [['token'=>$token,'expire_at'=>$expire_at]];
+                $data = ['token'=>$token,'expire_at'=>$expire_at];
 
                 Storage::disk('public')->put('msGraph.json', json_encode($data));
 
@@ -65,7 +62,35 @@ class HomeController extends Controller
         }
     }
 
+    public function excel()
+    {
+        $token = json_decode(Storage::disk('public')->get('msGraph.json'))->token;
+        // Get the access token
+        $accessToken = $token;
 
+        // Create the request body
+        $body = [
+            'name' => 'test.xlsx',
+            'file' => [
+                'type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                'content' => base64_encode(file_get_contents('test.xlsx')),
+            ],
+        ];
+
+        // Make the request to the Microsoft Graph API
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $accessToken,
+        ])->post('https://graph.microsoft.com/v1.0/me/drive/root/children', $body);
+
+        // Check the response status code
+        if ($response->status() === 201) {
+            // The Excel sheet has been created successfully
+            return redirect()->route('excel.index');
+        } else {
+            // An error has occurred
+            return view('excel.create')->withErrors($response->json());
+        }
+    }
     public function whatspp()
     {
         $token = \request()->waId;
@@ -89,13 +114,13 @@ class HomeController extends Controller
             'Content-Type: application/json'
           ),
         ));
-        
+
         $response = curl_exec($curl);
-        
+
         curl_close($curl);
-        
+
         dd($response);
-        
+
     }
 
     public function sitemap()

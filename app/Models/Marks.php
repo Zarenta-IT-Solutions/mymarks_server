@@ -20,6 +20,7 @@ class Marks extends Model
     protected $casts = [
         'mark_data'=>'array',
         'calculate_data'=>'array',
+        'roll_number'=>'integer'
     ];
 
 }

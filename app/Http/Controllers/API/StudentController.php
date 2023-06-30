@@ -238,7 +238,7 @@ class StudentController extends Controller
             StudentAcademicYear::where('user_id',$student['id'])->where('class_id',$request->class_id)->where('academic_id',auth()->user()->current_academic_year_id)->update(['roll_number'=>$student['roll_number']]);
             $marks = Marks::where('user_id',$student['id'])->where('class_id',$request->class_id)->where('academic_year_id',auth()->user()->current_academic_year_id)->get();
             foreach($marks as $mark) {
-                $mark->roll_number = $student['roll_number'];
+                $mark->roll_number = preg_replace("/[^0-9]/", "", $student['roll_number']);
                 $markData = $mark->mark_data;
                 $markData['roll_number'] = $student['roll_number'];
                 $mark->mark_data = $markData;

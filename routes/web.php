@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class,'index']);
 Route::get('token', [\App\Http\Controllers\HomeController::class,'token']);
+Route::get('excel', [\App\Http\Controllers\HomeController::class,'excel']);
 Route::get('whatspp', [\App\Http\Controllers\HomeController::class,'whatspp']);
 Route::get('sitemap.xml', [\App\Http\Controllers\HomeController::class,'sitemap']);
 Route::get('admin', [\App\Http\Controllers\HomeController::class,'admin']);
